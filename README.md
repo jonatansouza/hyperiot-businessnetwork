@@ -93,6 +93,13 @@ Submit a `removeThirdPartServiceOnDevice` transaction:
 
 After submitting this transaction, you should now see the transaction in the Transaction Registry and the service inside the `allowedUsers` array on `Device#assetId:1` will be removed
 
+## Docs 
+
+[Developer Composer Solution](https://hyperledger.github.io/composer/latest/tutorials/developer-tutorial.html)
+
+[Deploy on Fabric](https://hyperledger.github.io/composer/latest/tutorials/deploy-to-fabric-single-org)
+
+[Writing Web Applications](https://hyperledger.github.io/composer/latest/applications/web.html) 
 ## License
  
 The MIT License (MIT)
