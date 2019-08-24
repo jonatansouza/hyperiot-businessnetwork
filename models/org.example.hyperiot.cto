@@ -1,0 +1,47 @@
+/**
+ * @author Jonatan Gall
+ * Hyper IoT network definition.
+ */
+ 
+namespace org.example.hyperiot
+
+asset Device identified by deviceId {
+  o String deviceId
+  o String name
+  o String description
+  --> Owner owner
+  --> ThirdPartService[] allowedUsers
+  
+}
+
+participant Owner identified by ownerId {
+  o String ownerId
+  o String firstName
+  o String lastName
+}
+
+participant ThirdPartService identified by thirdPartServiceId {
+  o String thirdPartServiceId
+  o String name
+  o String description
+}
+
+transaction registerThirdPartServiceOnDevice {
+  --> Owner owner
+  --> ThirdPartService thirdPartService
+  --> Device device
+}
+transaction removeThirdPartServiceOnDevice {
+  --> Owner owner
+  --> ThirdPartService thirdPartService
+  --> Device device
+}
+transaction grantThirdPartServicePermitionOnDevice {
+  --> ThirdPartService thirdPartService
+  --> Device device
+}
+event AccessEvent {
+  --> ThirdPartService thirdPartService
+  --> Device device
+  o Boolean access
+}
